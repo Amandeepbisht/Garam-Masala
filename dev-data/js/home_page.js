@@ -5,6 +5,9 @@ import {appetizer,veggie,nonVeg,tandoori,bread,biryani,desserts} from './menu.js
 const page_highlight=()=>{
   let urlArr=(window.location.href.split('/'))
   let active=(urlArr[urlArr.length-1])
+  if(active.length==0){
+    active='home';
+  }
   document.querySelector(`.page_link_${active}`).classList.add('active_page')
 }
 if(document.querySelector('.page_link')){page_highlight()}
