@@ -1,0 +1,251 @@
+.mapboxgl-ctrl-geocoder{
+  text-align: center;
+  background-color: white;
+  margin: auto;
+  width:100%;
+}
+.mapboxgl-ctrl-geocoder--icon{
+  color:white
+}
+
+.user_address{
+  position: relative;
+  margin-right: 10px;
+  display: inline;
+  top:20px;
+}
+.edit_button{
+  position: relative;
+  display:inline;
+  border:none;
+  background-color: chocolate;
+  color: white;
+  font-weight: 600;
+  top:20px;
+}
+.if_deliver{
+  margin-top: 20px;
+}
+
+.edit_address{
+  border:none;
+  border-radius: 4px;
+  background-color:orange;
+  font-weight: 600;
+}
+/******************ORDER BOX****************/
+
+.order_container{
+  display:none;
+  position:fixed;
+  z-index:1;
+  left: 0%;
+  top:0;
+  width:100%;
+  height:100%;
+  background-color: rgba(0,0,0,0.4);
+}
+.order_header{
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  height:auto;
+  overflow:auto;
+  
+}
+.close,.close_mobile_content {
+  color: #aaa;
+  margin-right: 100%;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+ 
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.order_name{
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.sold_out,.spicy{
+  margin-top:20px;
+}
+.quantity_column{
+  margin-top: 20px;
+}
+.cart_btn{
+  margin-top:20px;
+      
+}
+.check_out_btn{
+  width:80%;
+  border:none;
+  border-radius:20px;
+  height:50px;
+  font-weight:550;
+}
+.item_qty,.check_out_item_name{
+  float:left;
+}
+.check_out_item_name{
+  width:55%;
+  height:6%;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+ 
+}
+.item_qty{
+  font-weight: 550;
+  margin-right: 15px;
+}
+
+.check_out{
+  margin-bottom: 40px;
+}
+.delete_item,.edit_item{
+  
+  padding:10px;
+}
+.delete_item:hover,.edit_item:hover{
+  background-color:orange;
+  border-radius: 50%;
+}
+.check_out_item{
+  padding-top: 10px;
+}
+.check_out_item:hover{
+  background-color:#f2f2f2;
+}
+
+.order{
+  top: 0;
+  bottom:0;
+  position:fixed;
+  overflow-y:auto;
+  overflow-x:hidden;
+  right:0;
+}
+.cart_items_mobile{
+  width:25%;
+}
+.cart_items{
+  width:40%;
+  margin-left: 20px;
+}
+.home_button{
+  float:left;
+  width:20%;
+  margin-left: 20px;
+}
+.cart_items,.cart_items_mobile,.home_button{
+  
+  margin-top: 10px;
+  border:none;
+  padding:10px;
+  border-radius: 25px;
+  font-weight: 550;
+  background-color: orange;
+}
+
+.mobile_cart_row{
+  
+  position: fixed;
+  width:100%;
+  z-index: 2;
+  padding-bottom: 10px;
+  display:none;
+  text-align: right;
+  padding-right: 20px;
+}
+.type_of_order{
+  width:60%;
+  margin-left: 20%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/*****SCREEN ADJUSTMENT FOR ORDER BOX*************/
+@media only screen and (max-width:1100px){
+  .check_out_btn{
+    width:50%;
+  }
+}
+@media only screen and (max-width:991px){
+  .order_header{
+    width:100%;
+    height:100%;
+    margin: 0;
+    position: relative;
+    z-index: 12;
+  }
+  .cart_btn{
+    display: block;
+    text-align: center;
+    margin-top: 40px auto;
+  }
+  .order{
+    display:none;
+  }
+  .mobile_cart_row{
+    display:block;
+  }
+  .mobile_content > .row > .home_button{
+    display:none;
+  }
+  
+}
+
+@media only screen and (min-width:992px){
+  .close_mobile_content{
+    display:none;
+  }
+
+
+}
+/*********loader*************/
+
+
+#loader,#mobile_loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  margin: -76px 0 0 -76px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  border-bottom: 16px solid #3498db;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.marker {
+  background-image: url("https://img.icons8.com/dusk/64/000000/region-code.png");
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}

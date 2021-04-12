@@ -1,0 +1,1076 @@
+html,body{
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.header{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height:20vh;
+  position:fixed;
+}
+
+.header-mobile{
+  display: none;
+}
+.toggled{
+  display:none;
+}
+#page_content{
+  display:none;
+}
+#loading_content{
+  display:block;
+} 
+.section_title{
+  color:white;
+  font-size: 35px;
+  font-weight: 450;
+  margin-top: 3vh;
+  transform:scaleY(1.3);
+  text-align: center;
+  padding-right: 25px;
+}
+
+.section_subtitle{
+  text-align: center;
+  font-size: 18px;
+  font-style: italic;
+  color:white;
+  font-weight: 400;
+  padding-bottom: 4vh;
+}
+
+.page_link{
+  padding-top: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: 800;
+  font-size: 18px;
+  font-family: DejaVu Sans Mono, monospace;
+}
+.page_link a{
+  color:white;
+}
+.active_page a{
+  color:orange;
+}
+.page_link a:hover{
+  color:orange;
+  text-decoration: none;
+}
+
+
+/*----------------------------------------------------------------------------------*/
+                              /*HOME PAGE STYLING*/
+/*----------------------------------------------------------------------------------*/
+.top{
+  height:100vh;
+  background-size: cover;
+  background-image: 
+  linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  ),
+  url('./../images/home_page/background_image_1.jpg');
+}
+
+.home_page_section_title{
+  color:black;
+  font-size: 35px;
+  font-weight: 450;
+  margin-top: 3vh;
+  transform:scaleY(1.3);
+  text-align: center;
+  padding-right: 25px;
+}
+
+.home_page_section_subtitle{
+  text-align: center;
+  font-size: 18px;
+  font-style: italic;
+  color:gray;
+  font-weight: 400;
+  padding-bottom: 4vh;
+}
+
+.img{
+  height:100%;
+}
+
+.welcome{
+  text-align: center;
+  margin-right: 40px;
+}
+
+.welcome_text{
+  margin-top: 10vh;
+  color:white;
+  font-size: 35px;
+  font-family:Segoe Script;
+}
+
+.intro_text{
+  margin-top: 15px;
+  color:white;
+  font-size: 35px;
+  font-weight: 600;
+  margin-top: 10vh;
+  transform:scaleY(1.3);
+}
+
+.book_text{
+  margin-top:15px;
+  color:white;
+  font-size: 18px;
+  font-weight: 500;
+  transform:scaleY(1.5);
+}
+
+.order_online_btn{
+ padding:15px 25px 15px 25px;
+ font-weight: 700;
+ font-size: 15px;
+ background-color: #ffa31a;
+ border:none;
+}
+
+.welcome{
+  animation: growUp 7s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes growUp{
+  0%   { transform:scale(0); }
+  20%,100% { transform:scale(1); }
+}
+/******MOBILE SECTION*******/
+
+.side_icon{
+  padding-top: 7vh;
+}
+
+.fa-bars{
+  color:white;
+}
+.mobile_wrapper{
+  background-color: black;
+  height:120vh;
+  
+}
+.fa-times{
+  color:white;
+}
+.close_btn{
+  padding-top: 7vh;
+  float:right;
+}
+.mobile_menu{
+  text-align: center;
+  margin-top: 10vh;
+}
+
+.page_link_mobile a{
+  color:white;
+  margin-bottom: 2vh;
+  
+}
+.page_link_mobile a:hover{
+  color:orange;
+  text-decoration: none;
+}
+.active_page_mobile a{
+  color:orange
+}
+
+/****SLIDER SECTION*******/
+.images{
+  margin:40px;
+  height:20vh;
+  border:4px solid white;
+  border-radius: 15px;
+  text-align: center;
+  padding: 20px;
+  
+}
+.card{
+  padding:10px 20px 20px 20px;
+}
+.image{
+  height:30vh;
+  margin-top: 0px;
+}
+.slide{
+  width:100%;
+  height:5vh;
+}
+.nextArrow{
+  position: absolute;
+  bottom:-5px;
+  margin-left: 52%;
+}
+.prevArrow{
+  position: absolute;
+  z-index:40;
+  bottom:-5px;
+  left: 45%;
+} 
+
+.menu_name{
+  padding-top: 10px;
+  padding-bottom: 5px;
+  border-bottom: 3px solid orange;
+}
+
+.menu_slider{
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height:auto;
+}
+
+.slider_title{
+  text-align: center;
+}
+
+.our_menu_title{
+  text-align: center;
+  font-size: 35px;
+  font-weight: 600;
+  transform:scaleY(1.3);
+  color:white;
+  padding-top:15px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: orange;
+}
+
+.menu_slider,.menu_slider_mobile,.menu_slider_tab{
+  background-size: cover;
+  background-image: 
+  linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  ),
+  url('./../images/home_page/our_menu2.jpg');
+  background-attachment: fixed;
+}
+
+.fa-chevron-circle-left,.fa-chevron-circle-right{
+  color:white;
+}
+
+.our_menu_subtitle{
+  text-align: center;
+  font-size: 18px;
+  font-style: italic;
+  color:white;
+  font-weight: 400;
+}
+
+.visit_btn{
+  border:none;
+  padding:5px 25px 5px 25px;
+  font-weight: 600;
+}
+
+.order_menu_section{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+ 
+}
+/****ABOUT SECTION************/
+
+.about_us_container{
+  border:6px solid #ffe0b3;
+  margin-bottom: 5vh;
+  background-color: white;
+}
+
+.about_us_content{
+  padding:0px 100px 10px 10px;
+  line-height: 1.8em;
+}
+
+.about_us_title,.reserve_table_title,.catering_title{
+  text-align: center;
+  color:orange;
+  font-family: 'Caveat', cursive;
+  font-size: 65px;
+  margin-top: 20px;
+}
+
+.about_section_photo{
+  margin-left: -120px;
+  margin-bottom: 5vh;
+}
+
+.about_us_image{
+  width:100%;
+  height:100%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+.read_more{
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.read_more_btn{
+  padding:15px 25px 15px 25px;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #ffa31a;
+  border:none;
+}
+
+/******CALL TO MAKE RESERVATION*********/
+.reserve_call_container{
+  height:auto;
+  margin-top: 3vh;
+  padding-bottom: 2vh;
+}
+
+.make_call{
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  transform:scaleY(1.3);
+  height:auto;
+}
+.phone_number{
+  text-align: center;
+  font-size: 28px;
+  font-weight: 500;
+  transform:scaleY(1.2);
+}
+.contact{
+  text-align: center;
+}
+
+.view_complete,.reserve_now{
+  padding:15px 25px 15px 25px;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #ffa31a;
+  border:none;
+}
+
+/****reservation_now*******/
+.reservation_now{
+  height:auto;
+  background-size: cover;
+  background-image: 
+  linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  ),
+  url('./../images/home_page/reservation_table.jpg');
+  background-attachment: fixed;
+}
+
+.reservation_form{
+  justify-content: stretch;
+  margin-top: 0px;
+  background: rgba(25, 25, 25, .5); 
+}
+
+.form_elem{
+  margin-bottom: 20px;
+  text-align: center;
+}
+.reserve_table_subtitle{
+  text-align: center;
+  font-size: 35px;
+  font-weight: 600;
+  transform:scaleY(1.3);
+  color:white;
+  padding-bottom: 15px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: orange;
+  margin-bottom: 5vh;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="text"] {
+  color:orange;
+  border:2px solid white;
+  background:  linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  );
+}
+
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="text"]:focus{
+  color:orange;
+  border:2px solid white;
+  background:linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  );
+}
+
+input[type="text"]::-webkit-input-placeholder{
+  color:white !important;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator
+ {
+  filter: invert(1);
+}
+
+.reserve_table{
+  text-align: center;
+  margin-bottom:2vh;
+}
+/****subscribe Letter****/
+.subscription{
+  overflow-y:hidden;
+  padding-bottom: 20px;
+  background-color: #f2f2f2;
+}
+.subscribe_title{
+  text-align: center;
+  padding-top: 10px;
+  font-size: 32px;
+  font-weight: 600;
+  transform:scaleY(1.3);
+}
+.subscribe_subtitle{
+ text-align:center;
+ padding-top: 30px;
+ font-weight: 500;
+}
+.submit{
+  padding-top: 30px;
+  text-align: left;
+}
+.email{
+  width:60%;
+  border:3px solid gray;
+}
+.submit_email{
+  border:none;
+  padding:4px 25px 4px 25px;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #cccccc;
+}
+
+/****BOTTOM SECTION*******/
+.block{
+  font-size: 14px;
+  color:white;
+}
+.bottom{
+  /* background-color: khaki; */
+  background-size: cover;
+  background-image: 
+  linear-gradient(
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.9)
+  ),
+  url('./../images/home_page/reservation_table.jpg');
+  padding-bottom: 20px;
+}
+.footer_contact{
+  padding-left: 0;
+}
+
+.block ul{
+  padding:0;
+  margin:0;
+}
+
+#email_footer,
+#location_footer,
+#phone_footer{
+  margin-bottom: 12px;
+}
+.fa-envelope-open
+.fa-map-marker-alt,
+.fa-phone-alt{
+  margin-right: 5px;
+}
+ul.leaders {
+  max-width: 40em;
+  padding: 0;
+  overflow-x: hidden;
+  list-style: none}
+ul.leaders li:before {
+  float: left;
+  width: 0;
+  white-space: nowrap;
+  content:
+". . . . . . . . . . . . . . . . . . . . "
+". . . . . . . . . . . . . . . . . . . . "
+". . . . . . . . . . . . . . . . . . . . "
+". . . . . . . . . . . . . . . . . . . . "}
+ul.leaders span:first-child {
+  padding-right: 0.33em;
+  background-color:  rgba(0, 0, 0, 0.8);
+  }
+ul.leaders span + span {
+  float: right;
+  padding-left: 0.33em;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.footer_title{
+  color:orange;
+  padding-top: 3vh;
+  padding-bottom: 1vh;
+  transform:scaleY(1.3);
+  font-size: 20px;
+}
+
+.allright{
+   background-color: black;
+   border-top: 2px solid gray;
+   padding-top: 20px;
+   color:#e6e6e6;
+}
+
+/*****SCREEN ADJUSTMENT*************/
+
+  @media only screen and (max-width:1100px){
+
+  .header{
+    display:none
+  }
+  .header-mobile{
+    display: flex;
+    justify-content: space-between;
+  }
+  .welcome_text{
+    font-size: 50px;
+  }
+  .intro_text,.book_text{
+    font-size: 40px;
+    transform:scaleY(1.3);
+    
+  }
+  .intro_text{
+    padding-top: 5vh;
+  }
+  .about_section_photo{
+    display:none;
+  }
+
+  .about_us_content{
+    padding:0px 50px 50px 50px;
+   
+  }
+  .about_us_container{
+    text-align: center;
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+  .about_us_title,.reserve_table_title{
+    font-size: 45px;
+  }
+  .welcome{
+    margin-right: 0px;
+  }
+  .order_menu_section{
+    margin-left: 0px;
+  }
+  .our_menu_title,.section_title,.make_call,.reserve_table_subtitle{
+    font-size: 23px;
+  }
+  .input{
+    margin-left: 10px; 
+    margin-right: 10px; 
+  }
+  
+  .reservation_form{
+    padding:0px 20px 0px 40px;
+  }
+
+  .submit{
+    text-align: center;
+  }
+
+
+}
+@media only screen and (max-height:400px){
+  .top{
+    height:auto;
+  }
+}
+@media only screen and (max-width:800px){
+  
+  .about_us_content{
+    padding:0px 10px 50px 10px;
+  }
+
+   .welcome_text{
+    font-size: 22px;
+   }
+  .intro_text{
+    font-size: 18px;
+  }
+  .book_text{
+    font-size: 12px;
+  }
+  .intro_text{
+    padding-top: 5vh;
+  }
+  .make_call,.phone_number{
+    font-size:20px;
+  }
+ 
+}
+/*----------------------------------------------------------------------------------*/
+                              /*ABOUT US PAGE STYLING*/
+/*----------------------------------------------------------------------------------*/
+
+.top_section_header{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height:20vh;
+  position:fixed;
+}
+
+.about_us_top{
+  height:50vh;
+  background-size: cover;
+  background-image: 
+  linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  ),
+  url('./../images/aboutUs_page/about_us_background.jpg');
+}
+
+.top_section_header_mobile{
+  display: none;
+  height:20vh;
+}
+
+
+.about_page_photo{
+  margin-right: -120px;
+  margin-bottom: 5vh;
+  position:relative;
+  z-index:10;
+}
+.about_page_container{
+  text-align: center;
+  margin-top: 5vh;
+}
+.about_page_content{
+  padding:0px 10px 10px 100px;
+  line-height: 1.8em;
+  text-align: left;
+}
+.about_page_section{
+  border:6px solid #ffe0b3;
+  margin-bottom: 5vh;
+  background-color: white;
+}
+.contact_us_btn{
+  padding:15px 25px 15px 25px;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #ffa31a;
+ 
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border:none;
+ }
+
+ .best_service_section{
+  height:50vh;
+  background-size: cover;
+  background-image: 
+  linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  ),
+  url('./../images/aboutUs_page/best_Service_image.jpg');
+  color:white;
+  padding-top: 20vh;
+  background-attachment: fixed;
+ }
+ .best_service_title{
+   font-size: 35px;
+   transform:scaleY(1.3);
+   letter-spacing: 4px;
+   font-weight: 500;
+ }
+ .best_service_subtitle{
+  text-align: center;
+  font-size: 18px;
+  font-style: italic;
+  color:white;
+  font-weight: 400;
+ }
+
+/*****SCREEN ADJUSTMENT ABOUT US PAGE*************/
+
+@media only screen and (max-width:1100px){
+  .about_us_top{
+    height:60vh;
+  }
+  .top_section_header{
+    display:none
+  }
+  .top_section_header_mobile{
+    display: flex;
+    justify-content: space-between;
+  }
+  .about_page_photo{
+    display:none;
+  }
+  .about_page_content{
+    padding:0px 10px 50px 10px;
+    text-align: center;
+  }
+  .about_page_section{
+    text-align: center;
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+
+  .best_service_section{
+    padding-top: 20vh;
+  }
+  .best_service_title{
+    font-size: 25px;
+  }
+
+}
+
+@media only screen and (max-width:380px){
+  .contact_us_btn{
+    margin-right: 0px;
+  }
+}
+
+/*----------------------------------------------------------------------------------*/
+                              /*OUR MENU PAGE STYLING*/
+/*----------------------------------------------------------------------------------*/
+.menu,.menu_row{
+  padding-bottom: 2vh;
+  
+}
+ .menu_row{
+  width:90%;
+  padding-left: 10%;
+} 
+.our_menu_top{
+  height:50vh;
+  background-size: cover;
+  background-image: 
+  linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  ),
+  url('./../images/ourMenu_page/our_menu_cover.jpg');
+}
+
+
+ul.menu_list li{
+  display:inline-block;
+  padding:5px 10px 5px 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.menu_list{
+  text-align: center;
+}
+.menu_list li .icon:hover{
+  background-color: orange;
+}
+.icon{
+  border:1px solid #333333;
+  border-radius:50%;
+}
+.menu_title{
+  font-size: 20px;
+  color:#333333;
+  font-weight: 500;
+}
+.our_menu_page_title{
+  text-align: center;
+  font-size: 35px;
+  font-weight: 450;
+  padding-bottom: 20px;
+}
+
+.menu_box{
+  border:1px solid #595959;
+  padding:10px;
+  border-radius: 20px;
+}
+
+.menu_content{
+  /* margin-left: 10px;
+  margin-right: 10px; */
+  margin-top: 15px;
+}
+
+.item_name{ 
+  display:inline;
+  font-family: 'Dancing Script', cursive;
+  font-size: 30px;
+}
+.item_price{
+  float:right;
+  display:inline;
+  font-family: 'Dancing Script', cursive;
+  font-size: 20px;
+  color:#ff9900;
+}
+.item_description{
+  padding-top:2vh;
+  font-weight: 600;
+}
+.active{
+  background-color: orange;
+}
+
+
+/*****SCREEN ADJUSTMENT OUR MENU PAGE*************/
+@media only screen and (max-width:1100px){
+  .our_menu_top{
+    height:60vh;
+  }
+  .menu_row{
+    width:100%;
+  }
+}
+
+/*----------------------------------------------------------------------------------*/
+                              /*GALLERY PAGE STYLING*/
+/*----------------------------------------------------------------------------------*/
+.gallery_title{
+  text-align: center;
+  font-size: 35px;
+}
+.image_row{
+  margin-bottom: 3vh;
+ 
+}
+.img-lightbox{
+  height:100vh;
+}
+/*****SCREEN ADJUSTMENT OUR GALLERY PAGE*************/
+@media only screen and (max-width:581px){
+  .image_gallery{
+    margin-bottom: 20px;
+    overflow-y: hidden;
+  }
+  .image_row{
+    margin-bottom: 0px;
+   
+  }
+}
+/*----------------------------------------------------------------------------------*/
+                              /*CATERING PAGE STYLING*/
+/*----------------------------------------------------------------------------------*/
+.catering_page_photo{
+  margin-right: -120px;
+  margin-bottom: 5vh;
+  position:relative;
+  z-index:10;
+}
+.catering_page_container{
+  text-align: center;
+  margin-top: 5vh;
+}
+.catering_page_content{
+  padding:0px 10px 10px 100px;
+  line-height: 1.8em;
+  text-align: left;
+}
+.catering_page_section{
+  border:6px solid #ffe0b3;
+  margin-bottom: 5vh;
+  background-color: white;
+}
+
+.catering_image{
+  width:100%;
+  height:100%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+.catering_top{
+  height:50vh;
+  background-size: cover;
+  background-image: 
+  linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  ),
+  url('./../images/aboutUs_page/about_us_background.jpg');
+}
+
+
+
+/*****SCREEN ADJUSTMENT OUR CATERING PAGE*************/
+@media only screen and (max-width:1100px){
+  .catering_page_section{
+    text-align: center;
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+  .catering_page_photo{
+    display:none;
+  }
+  .catering_page_content{
+    padding:0px 10px 50px 10px;
+    text-align: center;
+  }
+}
+
+/*----------------------------------------------------------------------------------*/
+                              /*CONTACT US STYLING*/
+/*----------------------------------------------------------------------------------*/
+
+.map_container{
+  text-align: center;
+  margin-top: 5vh;
+  
+  height:auto;
+}
+.map_row{
+  height:auto;
+}
+#map{
+  height:auto;
+  margin-right: 20px;
+}
+
+.contact_us_input{
+  width:100%;
+  height:40px;
+  background-color: #f2f2f2;
+  border:none;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.contact_form_title{
+  font-size: 25px;
+  font-weight: 450;
+  transform:scaleY(1.3);
+  
+  text-align: left;
+  padding-left: 20px;
+ 
+}
+
+.send_msg_btn{
+  padding:15px 25px 15px 25px;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #ffa31a;
+ 
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border:none;
+ }
+
+ @media only screen and (max-width:770px){
+
+  #map{
+    height:50vh;
+    margin-left: 20px;
+  }
+  .form_column{
+    padding-top: 20px;
+  }
+}
+
+
+/*----------------------------------------------------------------------------------*/
+                              /*ORDER PAGE STYLING*/
+/*----------------------------------------------------------------------------------*/
+
+.order_title{
+  font-size: 35px;
+}
+.order_subtitle,.order_hours{
+  font-size: 18px;
+}
+.menu_container{
+  border-right: 1px solid gray;
+}
+.order_page_image{
+  width:100%;
+  height:100%;
+  
+  background-size: cover;
+  
+} 
+.order_cover{
+  height:50vh;
+  margin-top: 5vh;
+}
+
+.item_name_order_page{ 
+  display:inline;
+  font-family: 'Dancing Script', cursive;
+  font-size: 20px;
+}
+.item_price_order_page{
+  float:right;
+  display:inline;
+  font-family: 'Dancing Script', cursive;
+  font-size: 20px;
+  color:#ff9900;
+}
+.item_description_order_page{
+  padding-top:2vh;
+  font-weight: 600;
+}
+.delivery_type label{
+  margin-right: 10px;
+  font-size: 20px;
+  padding-right:10px ;
+}
+
+.delivery_type label:hover{
+  background-color: orange;
+  border-radius: 5px;
+}
+.delivery_fee{
+  margin-bottom: 0px;
+  font-weight: 600;
+}
+/* .order_text_title,.order_text_subtitle{
+  text-align: center;
+}
+.order_text_title{
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 0px;
+} */
+ .about_order{
+  padding-bottom: 10px;
+  text-align: center;
+} 
+.address{
+  text-align: center;
+  padding-top: 2vh;
+}
+.address_input{
+  width:100%;
+}
+
+#geocoder{
+  text-align: center;
+}
+
+
