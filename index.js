@@ -6,7 +6,7 @@ const dotenv=require('dotenv');
 
 dotenv.config({path:'./config.env'})
 
-const port=process.env.port||8000;
+const port=process.env.PORT||8000;
 
 app.listen(port,()=>{
   console.log('Listening to requests on port 8000!')
