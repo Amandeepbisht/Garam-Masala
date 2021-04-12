@@ -70,7 +70,7 @@ let order_btn=document.querySelector('.order_online_btn')
 if(order_btn){
     order_btn.addEventListener('click',()=>{
     
-    window.open('http://localhost:8000/order',"_self")
+    window.open('/order',"_self")
   })
 }
 

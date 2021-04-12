@@ -357,10 +357,10 @@ cart_items_mobile.onclick=function(){
 
 let home_button=document.querySelectorAll('.home_button');
 home_button[1].onclick=function(){
-  window.open('http://localhost:8000/home',"_self")
+  window.open('/home',"_self")
 }
 home_button[0].onclick=function(){
-  window.open('http://localhost:8000/home',"_self")
+  window.open('/home',"_self")
 }
 
 /****following code runs when the page loads********/
