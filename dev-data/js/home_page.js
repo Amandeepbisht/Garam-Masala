@@ -158,7 +158,9 @@ let close_btn=document.querySelector('.fa-times')
 if(close_btn){
   let urlArr=(window.location.href.split('/'))
   let active=(urlArr[urlArr.length-1])
-  
+  if(active.length==0){
+    active='home';
+  }
   document.querySelector(`.mobile_${active}`).classList.add('active_page_mobile')
   close_btn.addEventListener('click',(event)=>{
     
