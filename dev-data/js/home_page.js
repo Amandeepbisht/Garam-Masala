@@ -226,7 +226,7 @@ let label1=document.getElementById('pickup')
 let label2=document.getElementById('delivery')
 if(label1&&label1.checked==true){
   text1='This is a pickup order';
-  text2="You'll need to go to Tandoori zaika to pick up this order: 196 Robinson Street";
+  text2="You'll need to go to Garam Masala to pick up this order: 196 Robinson Street";
   
   document.querySelector('.about_order').innerHTML=`
                                 <p><span style='
