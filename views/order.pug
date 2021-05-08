@@ -18,6 +18,8 @@ body(onload="myFunction()")
 
   #loader
   #content.container-fluid(style='display:none;')
+
+
     .row
       .col-lg-9.menu_container
         .row.justify-content-center.mobile_cart_row(style='background-color:gray;')
@@ -87,7 +89,7 @@ body(onload="myFunction()")
         .row.close_mobile_content &times;
         .row
           .col.mobile_content
-                
+               
             .row.justify-content-center
               button.home_button <i class="fas fa-home"></i>
               button.cart_items <i class="fas fa-shopping-cart"></i>  &emsp; 0
@@ -158,5 +160,6 @@ body(onload="myFunction()")
 <script src='https://unpkg.com/@turf/turf/turf.min.js'></script>
 script(src='./../js/home_page.js' type="module")
 script(src='./../js/order.js')
+script(src='./../js/ux.js')
 link(href='./../css/geocoder.css' rel='stylesheet' type='text/css')
 <script src="https://kit.fontawesome.com/228c19a043.js" crossorigin="anonymous"></script>

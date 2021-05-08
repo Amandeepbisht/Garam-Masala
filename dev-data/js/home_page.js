@@ -1,6 +1,5 @@
 import {appetizer,veggie,nonVeg,tandoori,bread,biryani,desserts} from './menu.js'
 
-
 // FOLLOWING FUNCTION HIGHLIGHTS THE ACTIVE PAGE ON HEADER SECTION
 const page_highlight=()=>{
   let urlArr=(window.location.href.split('/'))
@@ -11,10 +10,6 @@ const page_highlight=()=>{
   document.querySelector(`.page_link_${active}`).classList.add('active_page')
 }
 if(document.querySelector('.page_link')){page_highlight()}
-
-
-
-
 
 // FOLLOWING IS FOR THE SLIDER AT HOME PAGE
 jQuery(document).ready(function($){
@@ -66,14 +61,42 @@ jQuery(document).ready(function($){
 
 });
  
-let order_btn=document.querySelector('.order_online_btn')
+let order_btn=document.querySelectorAll('.order_online_btn');
+let read_more_btn=document.querySelector('.read_more_btn');
+let contact_us_btn=document.querySelector('.contact_us_btn');
+let view_complete=document.querySelectorAll('.view_complete')
+let visit_btn=document.querySelectorAll('.visit_btn')
 if(order_btn){
-    order_btn.addEventListener('click',()=>{
-    
-    window.open('/order',"_self")
+  order_btn.forEach((item=>{
+    item.addEventListener('click',function(){
+      window.open('/order',"_self")
+    })
+  }))
+}
+if(read_more_btn){
+  read_more_btn.addEventListener('click',()=>{
+    window.open('/aboutUs',"_self")
   })
 }
-
+if(contact_us_btn){
+  contact_us_btn.addEventListener('click',()=>{
+    window.open('/contactUs',"_Self")
+  })
+}
+if(view_complete){
+  view_complete.forEach((item=>{
+    item.addEventListener('click',()=>{
+      window.open('/contactUs',"_self")
+    })
+  }))
+}
+if(visit_btn){
+  visit_btn.forEach((item)=>{
+    item.addEventListener('click',()=>{
+      window.open('/ourMenu',"_self");
+    })
+  })
+}
 
 // FOLLOWING IS FOR THE TEXT AT THE VERY BOTTOM OF EVERY PAGE
 let date
@@ -119,7 +142,6 @@ if (document.querySelector('.menu_list')){
     let menu_items=document.querySelector('.menu_row')
     let removedClass=(menu_items.classList[(menu_items.classList.length)-1])
     let newClass=(event.target.className.split(' ')[0])
-   
     if(newClass.length>0&&event.target.tagName=='IMG'){
       menu_items.classList.remove(removedClass);
       menu_items.classList.add(newClass);
@@ -155,18 +177,18 @@ if(menu_btn){
 }
 
 let close_btn=document.querySelector('.fa-times')
+let active_page_arr=['home','aboutUs','ourMenu','gallery','Catering','contactUs']
 if(close_btn){
+  
   let urlArr=(window.location.href.split('/'))
   let active=(urlArr[urlArr.length-1])
-  if(active.length==0){
+  if(active.length==0||active_page_arr.includes(active)==false){
     active='home';
   }
   document.querySelector(`.mobile_${active}`).classList.add('active_page_mobile')
   close_btn.addEventListener('click',(event)=>{
-    
     document.getElementById('wrapper').style.display='block';
     document.querySelector('.toggled').style.display='none';
-    
   })
 }
 
@@ -400,6 +422,38 @@ const delivery_check=(obj)=>{
     document.querySelector('.if_deliver').style.color='red' 
     document.querySelector('.type_of_order').textContent=`Sorry We cannot deliver at: ${name[0]},${name[1]}`    
   }
+}
+
+// ***************FOR THE DROPDOWN LIST ON THE TOP BAR***********************//
+let drop_down=document.querySelector('.dropdown-menu')
+const logout=async()=>{
+  try{
+    const res=await axios({
+      method:'GET',
+      url:'api/v1/user/logout'
+    })
+    if(res.data.status=='success'){
+      console.log("aman is getting back to life.")
+      //window.open('/home',"_self")
+    }
+  }
+  catch(err){
+    console.log(err)
+  }
+}
+
+if(drop_down!=undefined){
+  
+  drop_down.addEventListener('click',async e=>{
+    if(e.target.tagName=='A'&&e.target.id!="logout"){
+      console.log(e.target.id)
+      window.open(`/${e.target.id}`,"_self")
+    }
+    if(e.target.tagName=='A'&&e.target.id=="logout"){
+      await logout();
+      window.open('/home',"_self")
+    }
+  })
 }
 
 

@@ -52,6 +52,17 @@ html,body{
 .page_link a{
   color:white;
 }
+
+.login_link{
+  font-weight: 800;
+  font-size: 18px;
+  font-family: DejaVu Sans Mono, monospace;
+}
+
+.login_link a{
+  color:white;
+}
+
 .active_page a{
   color:orange;
 }
@@ -627,6 +638,12 @@ ul.leaders span + span {
   }
  
 }
+
+.dropdown-menu > li > a{
+  color:white;
+  font-weight: 650;
+  
+}
 /*----------------------------------------------------------------------------------*/
                               /*ABOUT US PAGE STYLING*/
 /*----------------------------------------------------------------------------------*/
@@ -793,7 +810,8 @@ ul.menu_list li{
 }
 .icon{
   border:1px solid #333333;
-  border-radius:50%;
+ 
+  border-radius: 50%;
 }
 .menu_title{
   font-size: 20px;
@@ -955,10 +973,11 @@ ul.menu_list li{
 .contact_us_input{
   width:100%;
   height:40px;
-  background-color: #f2f2f2;
+  background-color: #404040;
   border:none;
   padding-left: 20px;
   margin-bottom: 20px;
+  color:orange;
 }
 
 .contact_form_title{
@@ -1073,4 +1092,105 @@ ul.menu_list li{
   text-align: center;
 }
 
+/*----------------------------------------------------------------------------------*/
+                              /*LOGIN PAGE STYLING*/
+/*----------------------------------------------------------------------------------*/
+
+.top_login{
+  height:100vh;
+  background-size: cover;
+  background-image: 
+  linear-gradient(
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.6)
+  ),
+  url('./../images/login_page/login_background.jpg');
+  overflow:auto;
+  padding-bottom: 50px;
+}
+
+.login_box{
+  
+  text-align: center;
+  color:white;
+  height:40vh;
+  padding-top: 5vh;
+}
+#current_password,
+#new_password,
+#password,
+#email,
+#name,
+#confirm_password,
+#phone,
+#sign_up_code{
+  background:transparent;
+  border:1px solid white;
+  width:80%;
+  height:40px;
+  color:white;
+  padding-left:10px;
+  border-radius: 10px;
+}
+
+::placeholder{
+  color:white;
+}
+.login_btn{
+  width:50%;
+  border:none;
+  background-color:orange;
+  font-weight: 650;
+  border-radius: 8px;
+}
+.sign_up_btn{
+  border:none;
+  background:transparent;
+  color:orange;
+  font-weight: 650;
+  padding:10px;
+}
+/* .lost_login_link_btn,.update_password_btn{
+  margin-left: 20px;
+}
+.sign_up_box > .back_to_login_btn{
+  margin-left: 20px;
+}
+.reset_password_btn,.register_btn,.save_btn{
+  margin-right: 20px;
+} */
+.lost_login_link_btn,
+.reset_password_btn,
+.register_btn,
+.back_to_home_btn,
+.back_to_login_btn,
+.send_link_btn,
+.update_password_btn,
+.save_btn
+{
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight:650;
+  border:none;
+  background:orange;
+  color:black;
+  border-radius: 5px;
+  margin:10px;
+  
+}
+.home_link:hover,.login_link:hover{
+  text-decoration: none;
+  color:orange;
+}
+.back_to_home_btn,.back_to_login_btn{
+  margin-top: 10px;
+}
+.top_login{
+  font-size: 0.9rem;
+}
+/* @media only screen and (max-width:1100px){
+  .top_login{
+    height:auto;
+  }
+} */
 
