@@ -17,7 +17,7 @@ const notification=(str)=>{
       notify.textContent='';
       notify.style.color='orange'
       notify.classList.remove('error');
-    },3000)
+    },1500)
   }
 }
 
