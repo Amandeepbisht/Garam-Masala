@@ -34,7 +34,7 @@ const login=async(obj)=>{
     }
   }
   catch(err){
-    console.log(err)
+    console.log(err.reponse.data)
     console.log(err.response.data.message)
     notify.classList.add('error')
     return err.response.data.message
