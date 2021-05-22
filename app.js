@@ -24,7 +24,5 @@ app.set('views','./views');
 
 app.use('/api/v1/user',userRouter)
 app.use('/',viewRouter)
-
-
 app.use(globalErrorHandler)
 module.exports=app;

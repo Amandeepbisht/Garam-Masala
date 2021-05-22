@@ -34,8 +34,6 @@ const login=async(obj)=>{
     }
   }
   catch(err){
-    // console.log(err.response)
-    // console.log(err.response.data.message)
     notify.classList.add('error')
     return err.response.data.message
   }
@@ -49,8 +47,10 @@ login_btn.addEventListener('click',async(e)=>{
   login_obj.email=email;
   login_obj.password=password;
   let msg=await login(login_obj)
+  
+  console.log(msg)
   notification(msg)
-  if(msg.startsWith('You are')){
-    setTimeout(function(){location.assign('/home')},3000)
-  }
+  // if(msg.startsWith('You are')){
+  //   setTimeout(function(){location.assign('/home')},3000)
+  // }
 })
