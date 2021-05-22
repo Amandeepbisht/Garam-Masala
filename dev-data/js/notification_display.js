@@ -7,18 +7,19 @@ const notification=(str)=>{
   if(notify.classList[1]=='error'){
     notify.style.color='red';
   }
-  if(page!='signUp'&&page!='login'&&page!='forgotPassword'){
-    console.log('This is the log from line#11 of notification.js')
-    return setTimeout(function(){
-      location.reload();
-    },1000)
-  }
-  else if (page=='login'){
+
+  if (page=='login'){
     console.log('This is the log from line#17 of notification.js')
     return setTimeout(function(){
       notify.textContent='';
       notify.style.color='orange';
       notify.classList.remove('error');
+    },1000)
+  }
+  else if(page!='signUp'&&page!='login'&&page!='forgotPassword'){
+    console.log('This is the log from line#11 of notification.js')
+    return setTimeout(function(){
+      location.reload();
     },1000)
   }
 }
