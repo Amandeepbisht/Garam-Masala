@@ -13,7 +13,7 @@ const notification=(str)=>{
       location.reload();
     },1000)
   }
-  else{
+  else if (page=='login'){
     console.log('This is the log from line#17 of notification.js')
     return setTimeout(function(){
       notify.textContent='';
