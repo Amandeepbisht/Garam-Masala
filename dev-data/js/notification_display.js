@@ -11,7 +11,7 @@ const notification=(str)=>{
     console.log('This is the log from line#11 of notification.js')
     return setTimeout(function(){
       location.reload();
-    },3000)
+    },1000)
   }
   else{
     console.log('This is the log from line#17 of notification.js')
@@ -19,7 +19,7 @@ const notification=(str)=>{
       notify.textContent='';
       notify.style.color='orange';
       notify.classList.remove('error');
-    },3000)
+    },1000)
   }
 }
 
