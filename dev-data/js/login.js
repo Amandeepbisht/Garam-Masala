@@ -43,7 +43,7 @@ const login=async(obj)=>{
   }
 }
 
-login_btn.addEventListener('click',async(e)=>{
+login_btn.addEventListener('click',(e)=>{
   e.preventDefault();
   let email=document.getElementById('email').value
   let password=document.getElementById('password').value
@@ -51,7 +51,7 @@ login_btn.addEventListener('click',async(e)=>{
   login_obj.email=email;
   login_obj.password=password;
   console.log('Keep on pushing...you might make it')
-  await login(login_obj)
+  login(login_obj)
   
   // console.log(msg)
   // notification(msg)
