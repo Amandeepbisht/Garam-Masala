@@ -37,7 +37,8 @@ const login=async(obj)=>{
 //    notify.classList.add('error')
 //    notification(err.response.data.message)
     console.log("ooooops!")
-    location.reload();
+    console.log(err.response.data)
+    //location.reload();
     //return err.response.data.message
   }
 }
