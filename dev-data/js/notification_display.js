@@ -22,7 +22,7 @@ const notification=(str)=>{
       notify.textContent='';
       notify.style.color='orange';
       notify.classList.remove('error');
-      if (page=='login'){location.assign('/home')}
+      
     },2000)
   }
 }
