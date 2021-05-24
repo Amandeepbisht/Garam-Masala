@@ -10,14 +10,14 @@ const notification=(str)=>{
 
 
   if(page!='signUp'&&page!='login'&&page!='forgotPassword'){
-    console.log('This is the log from line#11 of notification.js')
+    
     return setTimeout(function(){
       location.reload();
     },2000)
   }
 
   else{
-    console.log('This is the log from line#17 of notification.js')
+    
     return setTimeout(function(){
       notify.textContent='';
       notify.style.color='orange';
