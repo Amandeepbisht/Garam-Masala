@@ -100,18 +100,18 @@ exports.login=catchAsync(async(req,res,next)=>{
   if(!req.body.email||!req.body.password){
     return next(new AppError('Please provide email and password', 400))
   }
-  //2) check if user exists and password is correct
+  //2) check if user exists in DB and password is correct
   let user= await User.findOne({email:req.body.email}).select('+password')
   
   if(!user){
-    return next(new AppError('Incorrect email-id or password',401))
+    return next(new AppError('Incorrect email-id or password',400))
   }
   let correct=await user.comparePassword(req.body.password,user.password)
   if(correct==false){
-    return next(new AppError('Incorrect email-id or password',401))
+    return next(new AppError('Incorrect email-id or password',404))
   }
   if(user.active==false){
-    return next(new AppError('Please verify you email id',401))
+    return next(new AppError('Please verify you email id',404))
   }
   //3) If everything is okay, send token to the client
   createSendToken(user,200,req,res)
