@@ -34,13 +34,9 @@ const login=async(obj)=>{
     }
   }
   catch(err){
-//    notify.classList.add('error')
-//    notification(err.response.data.message)
-    console.log("ooooops!")
-    console.log(err.reponse.data.message)
-    notification(err.response.data.message)
-    //location.reload();
-    //return err.response.data.message
+  console.log(err.response.data.message)
+  notification(err.response.data.message)  
+
   }
 }
 
