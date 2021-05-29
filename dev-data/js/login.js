@@ -14,6 +14,7 @@ if(sign_up_btn){
     window.open('/signUp',"_self")
   })
 }
+
 if(lost_login_link_btn){
   lost_login_link_btn.addEventListener('click',()=>{
     window.open('/lostSignUpCode',"_self")
@@ -34,9 +35,8 @@ const login=async(obj)=>{
     }
   }
   catch(err){
-  console.log(err.response.data.message)
-  notification(err.response.data.message)  
-
+    console.log(err.response.data.message)
+    notification(err.response.data.message)  
   }
 }
 
@@ -49,10 +49,5 @@ login_btn.addEventListener('click',(e)=>{
   login_obj.password=password;
   console.log('Keep on pushing...you might make it')
   login(login_obj)
-  
-  // console.log(msg)
-  // notification(msg)
-  // if(msg.startsWith('You are')){
-  //   setTimeout(function(){location.assign('/home')},3000)
-  // }
+
 })

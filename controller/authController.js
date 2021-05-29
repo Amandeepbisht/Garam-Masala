@@ -107,6 +107,7 @@ exports.login=catchAsync(async(req,res,next)=>{
     return next(new AppError('Incorrect email-id or password',400))
   }
   let correct=await user.comparePassword(req.body.password,user.password)
+
   if(correct==false){
     return next(new AppError('Incorrect email-id or password',404))
   }
