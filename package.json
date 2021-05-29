@@ -18,6 +18,8 @@
     "crypto": "^1.0.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-mongo-sanitize": "^2.1.0",
+    "helmet": "^4.6.0",
     "html-to-text": "^7.0.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.3",
@@ -25,7 +27,8 @@
     "path": "^0.12.7",
     "pug": "^3.0.0",
     "slugify": "^1.4.7",
-    "validator": "^13.5.2"
+    "validator": "^13.5.2",
+    "xss-clean": "^0.1.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
