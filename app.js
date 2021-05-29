@@ -7,9 +7,8 @@ const path=require('path');
 const cors = require('cors');
 const compression=require('compression');
 const cookieParser = require('cookie-parser');
-
 const xss=require('xss-clean');
-const mongoSantize=require('express-mongo-santize')
+const mongoSantize=require('express-mongo-sanitize')
 const helmet=require('helmet')
 
 app.use(compression())
