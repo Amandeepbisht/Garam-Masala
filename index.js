@@ -4,7 +4,8 @@ dotenv.config({path:'./config.env'})
 const app=require('./app')
 
 const port=process.env.PORT||8000;
-let DB=process.env.DATABASE.replace('<password>',process.env.DATABASE_PASSWORD)
+//let DB=process.env.DATABASE.replace('<password>',process.env.DATABASE_PASSWORD)
+let DB=process.env.DATABASE
 
 mongoose.connect(DB,{
   useNewUrlParser:true,
