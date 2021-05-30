@@ -3,11 +3,11 @@ let notify=document.querySelector('.notify');
 const notification=(str)=>{
   let arr=window.location.href.split('/');
   let page=arr[arr.length-1];
-  notify.textContent=str;
+  
   if(notify.classList[1]=='error'){
     notify.style.color='red';
   }
-
+  notify.textContent=str;
 
   if(page!='signUp'&&page!='login'&&page!='forgotPassword'){
     console.log("hello I am here!!!!!!!")
