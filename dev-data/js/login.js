@@ -35,6 +35,7 @@ const login=async(obj)=>{
     }
   }
   catch(err){
+    console.log(err)
     notify.classList.add('error')
     console.log(err.response.data.message)
     notification(err.response.data.message)  
@@ -49,6 +50,7 @@ login_btn.addEventListener('click',async(e)=>{
   login_obj.email=email;
   login_obj.password=password;
   console.log('Keep on pushing...you might make it')
+  console.log(login_obj)
   await login(login_obj)
   console.log("ooops i dont its working")
 
