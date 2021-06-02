@@ -17,6 +17,7 @@ const notification=(str)=>{
   }
 
   else{
+    console.log(`${page}`)
     console.log(`page`)
     return setTimeout(function(){
       notify.textContent='';
