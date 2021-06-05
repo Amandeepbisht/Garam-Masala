@@ -11,7 +11,7 @@ const xss=require('xss-clean');
 const mongoSantize=require('express-mongo-sanitize')
 const helmet=require('helmet')
 const csp=require('express-csp')
-app.use(compression())
+//app.use(compression())
 app.use(express.json({limit:'10kb'}))
 app.use(express.static(path.join(__dirname,'dev-data')))
 app.use(cookieParser())
