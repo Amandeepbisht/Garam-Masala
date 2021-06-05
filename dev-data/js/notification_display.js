@@ -1,6 +1,7 @@
 let notify=document.querySelector('.notify');
 
 const notification=(str)=>{
+  console.log('This is the log from line#4 if notification_display.js')
   let arr=window.location.href.split('/');
   let page=arr[arr.length-1];
   
