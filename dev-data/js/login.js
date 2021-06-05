@@ -33,6 +33,7 @@ const login=async(obj)=>{
       console.log({message:'Your are logged in!'})
       notification('You are logged in')
     }
+    console.log(res.data)
   }
   catch(err){
     console.log(err)
