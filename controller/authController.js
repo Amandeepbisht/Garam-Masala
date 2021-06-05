@@ -101,7 +101,7 @@ exports.login=catchAsync(async(req,res,next)=>{
     return next(new AppError('Please provide email and password', 400))
   }
   //2) check if user exists in DB and password is correct
-  let user= await User.findOne({email:req.body.email}).select('+password')
+  let user= await (await User.findOne({email:req.body.email})).select('+password')
   
   if(!user){
     return next(new AppError('Incorrect email-id or password',400))
