@@ -96,49 +96,26 @@ exports.isLoggedIn=async(req,res,next)=>{
 
 exports.login=catchAsync(async(req,res,next)=>{
   
-  // //1) check if email and password exist in req.body
-  // if(!req.body.email||!req.body.password){
-  //   return next(new AppError('Please provide email and password', 400))
-  // }
-  // //2) check if user exists in DB and password is correct
-  // let user= await User.findOne({email:req.body.email}).select('+password')
+  //1) check if email and password exist in req.body
+  if(!req.body.email||!req.body.password){
+    return next(new AppError('Please provide email and password', 400))
+  }
+  //2) check if user exists in DB and password is correct
+  let user= await User.findOne({email:req.body.email}).select('+password')
   
-  // if(!user){
-  //   return next(new AppError('Incorrect email-id or password',400))
-  // }
-  // let correct=await user.comparePassword(req.body.password,user.password)
-
-  // if(correct==false){
-  //   return next(new AppError('Incorrect email-id or password',404))
-  // }
-  // if(user.active==false){
-  //   return next(new AppError('Please verify you email id',404))
-  // }
-  // //3) If everything is okay, send token to the client
-  // createSendToken(user,200,req,res)
-  const {email,password}=req.body;
-  //1) check is email and password are there in the request
-  if(!email||!password){
-    return next(new AppError('Please enter email and password',400))
-  }
-  //2) check if the user exists in the DB
-  let user= await (await User.findOne({email:email}).select('+password'))
   if(!user){
-    return next(new AppError('Invalid email-id or password',400))
+    return next(new AppError('Incorrect email-id or password',400))
   }
-  // 3) check if the password is correct
- let correct= await user.comparePassword(password,user.password)
- if(correct==false){
+  let correct=await user.comparePassword(req.body.password,user.password)
+
+  if(correct==false){
     return next(new AppError('Incorrect email-id or password',404))
   }
   if(user.active==false){
-    return next(new AppError('This email-id is not registered yet!',404))
+    return next(new AppError('Please verify you email id',404))
   }
-  
-  createSendToken(200,user,res,req)
-
-
-
+  //3) If everything is okay, send token to the client
+  createSendToken(user,200,req,res)
 })
 
 exports.signUp=catchAsync(async(req,res,next)=>{
