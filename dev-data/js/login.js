@@ -21,38 +21,26 @@ if(lost_login_link_btn){
   })
 }
 
-// const login=async(obj)=>{
-//   let res
-//   try{
-//     res=await axios({
-//       method:'POST',
-//       url:'/api/v1/user/login',
-//       data:obj
-//     })
-//     if(res.data.status=='success'){
-//       console.log({message:'Your are logged in!'})
-//       notification('You are logged in')
-//     }
-//     console.log(res.data)
-//   }
-//   catch(err){
-//     console.log(err.response)
-//     notify.classList.add('error')
-//     console.log(err.response.data.message)
-//     notification(err.response.data.message)
-//   }
-// }
-
-const login=(obj)=>{
-  return axios.post('/api/v1/user/login',{
-    email:obj.email,
-    password:obj.password
-  }).then(function(response){
-    notification('you are logged in')
-  })
-  .catch(function(error){
-    console.log(error.response.data)
-  })
+const login=async(obj)=>{
+  let res
+  try{
+    res=await axios({
+      method:'POST',
+      url:'/api/v1/user/login',
+      data:obj
+    })
+    if(res.data.status=='success'){
+      console.log({message:'Your are logged in!'})
+      notification('You are logged in')
+    }
+    console.log(res.data)
+  }
+  catch(err){
+    console.log(err.response)
+    notify.classList.add('error')
+    console.log(err.response.data.message)
+    notification(err.response.data.message)
+  }
 }
 
 login_btn.addEventListener('click',async(e)=>{
