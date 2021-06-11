@@ -36,11 +36,11 @@ const login=async(obj)=>{
     console.log(res.data)
   }
   catch(err){
-    // console.log(err.response)
-    // notify.classList.add('error')
-    // console.log(err.response.data.message)
-    // notification(err.response.data.message)
-    notification("Incorrect email/id password")
+    console.log(err.response)
+    notify.classList.add('error')
+    console.log(err.response.data.message)
+    notification(err.response.data.message)
+   
     
   }
 }

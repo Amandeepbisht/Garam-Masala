@@ -42,8 +42,8 @@ app.set('view engine','pug');
 app.set('views','./views');
 app.set('trust proxy',1)
 
-
-app.use('/api/v1/user',userRouter)
 app.use('/',viewRouter)
+app.use('/api/v1/user',userRouter)
+
 app.use(globalErrorHandler)
 module.exports=app;
