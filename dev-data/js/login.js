@@ -52,7 +52,7 @@ login_btn.addEventListener('click',async(e)=>{
   login_obj.password=password;
   console.log('Keep on pushing...you might make it')
   console.log(login_obj)
-  login(login_obj)
+  await login(login_obj)
   //console.log("ooops i dont its working")
 
 })
