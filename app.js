@@ -41,9 +41,9 @@ app.use(function (req, res, next) {
 app.set('view engine','pug');
 app.set('views','./views');
 app.set('trust proxy',1)
+console.log("This is the log from line#44 of app.js")
 
-app.use('/',viewRouter)
 app.use('/api/v1/user',userRouter)
-
+app.use('/',viewRouter)
 app.use(globalErrorHandler)
 module.exports=app;
