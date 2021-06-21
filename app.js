@@ -17,7 +17,22 @@ app.use(express.static(path.join(__dirname,'dev-data')))
 app.use(cookieParser())
 app.use(cors());
 app.options('*', cors());
-
+app.use(function(req, res, next) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader(
+  "Access-Control-Allow-Methods",
+  "GET,HEAD,OPTIONS,POST,PUT,DELETE"
+  );
+  res.setHeader(
+  "Access-Control-Allow-Headers",
+  "Origin,Cache-Control,Accept,X-Access-Token ,X-Requested-With, Content-Type, Access-Control-Request-Method"
+  );
+  if (req.method === "OPTIONS") {
+  return res.status(200).end();
+  }
+  next();
+});
 app.use(xss())
 app.use(mongoSantize());
 app.use(helmet());
@@ -38,6 +53,7 @@ app.use(function (req, res, next) {
   res.header('Pragma', 'no-cache');
   next()
 })
+
 app.set('view engine','pug');
 app.set('views','./views');
 app.set('trust proxy',1)
