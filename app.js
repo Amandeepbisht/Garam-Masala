@@ -16,7 +16,7 @@ app.use(express.json({limit:'10kb'}))
 app.use(express.static(path.join(__dirname,'dev-data')))
 app.use(cookieParser())
 app.use(cors());
-app.options('*', cors());
+
 app.use(function(req, res, next) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Credentials", "true");
