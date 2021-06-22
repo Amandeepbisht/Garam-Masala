@@ -31,11 +31,13 @@ const login=async(obj)=>{
     })
     if(res.data.status=='success'){
       console.log({message:'Your are logged in!'})
-      notification('You are logged in')
+      notification('You are logged in') 
     }
+    console.log('hello how are you?')
     console.log(res.data)
   }
   catch(err){
+    
     console.log(err.response)
     notify.classList.add('error')
     console.log(err.response.data.message)
