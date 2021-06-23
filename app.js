@@ -57,6 +57,7 @@ app.use(function (req, res, next) {
 app.set('view engine','pug');
 app.set('views','./views');
 app.set('trust proxy',1)
+app.enable('trust proxy');
 console.log("This is the log from line#44 of app.js")
 
 app.use('/',viewRouter)
