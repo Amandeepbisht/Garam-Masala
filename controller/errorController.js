@@ -82,11 +82,12 @@ module.exports=(err,req,res,next)=>{
   err.statusCode=err.statusCode||500;
   err.status=err.status||'error';
   
-  if(err.name=='JsonWebTokenError'){err=handleJWTError()}
-  if(err.name=='CastError'){err=handleCastError(err)}
-  if(err.name=='ValidationError'){err=handleValidationError(err)}
-  if(err.code==11000){err=handleDuplicateKeyError(err)}
+
   if(process.env.NODE_env=='production'){
+    if(err.name=='JsonWebTokenError'){err=handleJWTError()}
+    if(err.name=='CastError'){err=handleCastError(err)}
+    if(err.name=='ValidationError'){err=handleValidationError(err)}
+    if(err.code==11000){err=handleDuplicateKeyError(err)}
     sendErrorProd(err,req,res)
   }
   else if(process.env.NODE_env=='development'){
