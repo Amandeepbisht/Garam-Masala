@@ -82,15 +82,17 @@ module.exports=(err,req,res,next)=>{
   err.statusCode=err.statusCode||500;
   err.status=err.status||'error';
   
-
-  if(process.env.NODE_env=='production'){
+  console.log("This is the log from line#85 of errrorController.js")
+  
+  console.log(process.env.NODE_ENV)
+  if(process.env.NODE_ENV=='production'){
     if(err.name=='JsonWebTokenError'){err=handleJWTError()}
     if(err.name=='CastError'){err=handleCastError(err)}
     if(err.name=='ValidationError'){err=handleValidationError(err)}
     if(err.code==11000){err=handleDuplicateKeyError(err)}
     sendErrorProd(err,req,res)
   }
-  else if(process.env.NODE_env=='development'){
+  else if(process.env.NODE_ENV=='development'){
    sendErrorDev(err,req,res)
   }
 }
