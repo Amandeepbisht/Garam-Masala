@@ -30,19 +30,14 @@ const login=async(obj)=>{
       data:obj
     })
     if(res.data.status=='success'){
-      console.log({message:'Your are logged in!'})
+      
       notification('You are logged in') 
+      setTimeout(function(){window.open('/home',"_self")},3000)
     }
-    console.log('hello how are you?')
-    console.log(res.data)
+
   }
   catch(err){
-    
-    console.log(err.response)
-    console.log(err.request)
-    console.log(err)
     notify.classList.add('error')
-    console.log(err.response.data.message)
     notification(err.response.data.message)
   }
 }
@@ -54,9 +49,6 @@ login_btn.addEventListener('click',async(e)=>{
   let login_obj={}
   login_obj.email=email;
   login_obj.password=password;
-  console.log('Keep on pushing...you might make it')
-  console.log(login_obj)
   await login(login_obj)
-  //console.log("ooops i dont its working")
-
 })
+

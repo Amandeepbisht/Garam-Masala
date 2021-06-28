@@ -17,7 +17,6 @@ save_btn.addEventListener('click',async(e)=>{
   notification(msg)
   if(msg.startsWith('Your password')){
     setTimeout(function(){window.open('/home','_self')},3000)
-
   }
 })
 
@@ -35,7 +34,6 @@ const resetPassword=async(obj)=>{
   }
   catch(err){
     notify.classList.add('error')
-    console.log(err.response.data.message)
     return (err.response.data.message)
   }
 }

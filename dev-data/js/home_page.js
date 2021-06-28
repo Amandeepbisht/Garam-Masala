@@ -150,6 +150,9 @@ if (document.querySelector('.menu_list')){
       render_menu(eval(newClass))
     }
     
+    if(screen.width<1100){
+      menu_items.scrollIntoView({behavior:"smooth"});
+    }
   })
 }
 
@@ -433,7 +436,7 @@ const logout=async()=>{
       url:'api/v1/user/logout'
     })
     if(res.data.status=='success'){
-      console.log("aman is getting back to life.")
+      
       //window.open('/home',"_self")
     }
   }
@@ -446,7 +449,7 @@ if(drop_down!=undefined){
   
   drop_down.addEventListener('click',async e=>{
     if(e.target.tagName=='A'&&e.target.id!="logout"){
-      console.log(e.target.id)
+      
       window.open(`/${e.target.id}`,"_self")
     }
     if(e.target.tagName=='A'&&e.target.id=="logout"){
@@ -455,6 +458,7 @@ if(drop_down!=undefined){
     }
   })
 }
+
 
 
 

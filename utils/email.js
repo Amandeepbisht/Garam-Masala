@@ -45,6 +45,6 @@ module.exports= class Email{
     await this.send('login_link','Password reset link')
   }
   async verifyEmailId(){
-    await this.send('verify_email_id','Verify you email-id')
+    await this.send('verify_email_id','Verify your email-id')
   }
 }

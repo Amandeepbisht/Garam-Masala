@@ -35,33 +35,22 @@ app.use(function(req, res, next) {
 });
 app.use(xss())
 app.use(mongoSantize());
-app.use(helmet());
-app.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      defaultSrc: ["'self'", 'https:', 'http:', 'data:', 'ws:'],
-      baseUri: ["'self'"],
-      fontSrc: ["'self'", 'https:', 'http:', 'data:'],
-      scriptSrc: ["'self'", 'https:', 'http:', 'blob:'],
-      styleSrc: ["'self'", "'unsafe-inline'", 'https:', 'http:'],
-    },
-  })
-);
+
 app.use(function (req, res, next) {
   res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
   res.header('Expires', '-1');
   res.header('Pragma', 'no-cache');
   next()
 })
-
 app.set('view engine','pug');
 app.set('views','./views');
 app.set('trust proxy',1)
 app.enable('trust proxy');
-console.log("This is the log from line#44 of app.js")
 
-app.use('/',viewRouter)
+
+
 app.use('/api/v1/user',userRouter)
+app.use('/',viewRouter)
 
 app.use(globalErrorHandler)
 module.exports=app;

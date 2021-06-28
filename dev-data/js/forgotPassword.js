@@ -20,7 +20,7 @@ let send_login_link=async(obj)=>{
     }
   }
   catch(err){
-    console.log(err.response.data.message)
+    
     notify.classList.add('error')
     return err.response.data.message
   }

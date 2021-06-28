@@ -27,10 +27,3 @@ if(lost_login_link_btn){
   })
 }
 
-// let drop_down=document.querySelector('.dropdown-menu')
-// drop_down.addEventListener('click',e=>{
-//   if(e.target.tagName=='A'&&e.target.id!="logout"){
-//     console.log(e.target.id)
-//     window.open(`/${e.target.id}`,"_self")
-//   }
-// })

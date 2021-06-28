@@ -6,12 +6,9 @@ register_btn.addEventListener('click',async(e)=>{
   let obj={
     code:code
   }
-
   await verify_code(obj)
   window.open('/home',"_self")
 })
-
-
 
 const verify_code=async(obj)=>{
   let res

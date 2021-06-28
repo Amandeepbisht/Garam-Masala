@@ -16,7 +16,7 @@ exports.getAllUsers=async(req,res)=>{
 
 exports.getUserById=catchAsync(async(req,res,next)=>{
   let urlArr=req.originalUrl.split('/')
-  console.log("blah blah blah")
+  
   console.log(urlArr[urlArr.length-1])
   let id=req.params.id
   let user= await User.findById(id)

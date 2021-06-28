@@ -181,9 +181,11 @@ exports.forgotPassword=catchAsync(async(req,res,next)=>{
   
   let email=req.body.email;
   let user=await User.findOne({email:email})
-  //1) check of email-id exists in DB
+  // 1) check if there is any email id in the request
+  if(!email){return next(new AppError('Please insert an email-id',401))}
+  // 2) check of email-id exists in DB
   if(!user){return next(new AppError('Incorrect email-id. Please check again!',401))}
-  // 2) Generate reset password reset token
+  // 3) Generate reset password reset token
   let token= user.createPasswordResetToken();
   await user.save();
   let url=`http://localhost:8000/api/v1/user/resetPassword/${token}`
@@ -226,6 +228,10 @@ exports.resetPassword=catchAsync(async(req,res,next)=>{
 exports.lostSignUpCode=catchAsync(async(req,res,next)=>{
   let verification_code
   let email=req.body.email;
+  // check if there is any emailid in request
+  if (!email){
+    return next(new AppError('Please insert an email-id.',401))
+  }
   // check if the user exists
   let user=await User.findOne({email:email});
   if(!user){

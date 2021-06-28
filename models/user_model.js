@@ -11,7 +11,7 @@ const userSchema=new mongoose.Schema({
   },
   email:{
     type:String,
-    required:true,
+    required:[true,"Please enter you email-id."],
     unique:true,
     validate:[validator.isEmail,'Please provide a valid email.']
   },
@@ -67,8 +67,6 @@ userSchema.methods.comparePassword=async function(candidatePassword,userPassword
 }
 
 userSchema.methods.passwordChangedAfter= function(jwtTimeStamp){
-  // console.log(jwtTimeStamp,this.passwordChangedAt.getTime()/1000)
-
   if(this.passwordChangedAt){
     return jwtTimeStamp>(this.passwordChangedAt.getTime()/1000)
   }

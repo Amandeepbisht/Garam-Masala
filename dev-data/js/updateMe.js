@@ -4,7 +4,6 @@ let update_password_btn=document.querySelector('.update_password_btn');
 let back_to_home_btn=document.querySelector('.back_to_home_btn');
 let notify=document.querySelector('.notify')
 
-
 back_to_home_btn.addEventListener('click',(e)=>{
   window.open('/home',"_self");
 })
@@ -36,7 +35,6 @@ const updateUser=async(obj)=>{
     }
   }
   catch(err){
-    console.log(err.response.data.message)
     notify.classList.add('error')
     if(err.response.data.message.split(':')[1]!=undefined){
       return err.response.data.message.split(':')[1].split('.')[0]

@@ -18,8 +18,8 @@ body
   #wrapper
     .top_login.container-fluid
       .row.justify-content-end(style='background-color:black;padding-right:5%;')
-        <i class="fab fa-facebook-square fa-2x" style='margin-right:10px'></i>
-        <i class="fab fa-instagram-square fa-2x"style='margin-right:10px'></i>
+        <span style='color:white;'><i class="fab fa-facebook-square fa-2x" style='margin-right:10px'></i></span>
+        <span style='color:white;'><i class="fab fa-instagram-square fa-2x"style='margin-right:10px'></i></span>
         .page_link_login.login_link(style='margin-top:2px;')
           a.home_link(href='/home') HOME
       .row.justify-content-center
@@ -27,8 +27,7 @@ body
           img(src='./images/home_page/my_logo.png')
         .col-lg-12.header-mobile
           img(src='./images/home_page/my_logo.png')
-          .side_icon
-            <i class="fas fa-bars fa-2x"></i>
+
       .row.justify-content-center.login_form 
         .col-lg-4.login_box 
           .forgot_password_head 
@@ -38,6 +37,8 @@ body
             input#email(type='text' name='email' placeholder='enter email-id')
             br
             br
+          .notification_container(style='background-color:black;margin-top:10px;')
+            p.notify(style='color:orange;font-weight:550;')          
           button.send_link_btn Send signUp Code
           button.back_to_login_btn Back to Login Page
          
@@ -47,5 +48,5 @@ body
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js></script>
 
-script(src='./../js/lostSignUpCode.js')
+script(src='./../js/lostSignUpCode.js' type='module')
 <script src="https://kit.fontawesome.com/228c19a043.js" crossorigin="anonymous"></script>
