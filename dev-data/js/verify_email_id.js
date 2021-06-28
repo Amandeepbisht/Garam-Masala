@@ -1,3 +1,5 @@
+import {notification} from './notification_display.js'
+let notify=document.querySelector('.notify')
 let register_btn=document.querySelector('.register_btn');
 
 register_btn.addEventListener('click',async(e)=>{
@@ -6,8 +8,12 @@ register_btn.addEventListener('click',async(e)=>{
   let obj={
     code:code
   }
-  await verify_code(obj)
-  window.open('/home',"_self")
+  let msg=await verify_code(obj)
+  notification(msg)
+  if (msg.startsWith('Your account')){
+    setTimeout(function(){window.open('/home',"_self")},2000)
+  }
+  
 })
 
 const verify_code=async(obj)=>{
@@ -18,10 +24,13 @@ const verify_code=async(obj)=>{
       url:'/api/v1/user/verifyEmailId',
       data:obj
     })
-    console.log(res)
+    if(res.data.status=='success'){
+      return 'Your account have been created successfully!'
+    }
   }
   catch(err){
-    console.log(err.response.data)
+    notify.classList.add('error')
+    return err.response.data.message
   }
 }
 
